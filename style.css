@@ -4,3 +4,7 @@ body {
   -moz-box-shadow: inset 0px 0px 50px 20px rgba(68,131,199,1);
   box-shadow: inset 0px 0px 50px 20px rgba(68,131,199,1);
 }
+
+span {
+  font-style: italic;
+}
