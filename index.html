@@ -3,8 +3,64 @@
   <head>
     <meta charset="utf-8">
     <title>Curso Git</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <h1>Bienvenido al curso de git</h1>
+    <h3>Iniciar con GIT</h3>
+    <ul>
+      <li>
+        git config --global user.name "Juanfran Tomas"
+      </li>
+      <li>
+        git config --global user.email "juanfrandeveloper@gmail.com"
+      </li>
+      <li>
+        git config --global color.ui true
+      </li>
+      <li>
+        git init; <span> // Iniciar con el repositorio</span>
+      </li>
+    </ul>
+
+    <h3>Añadir archivos</h3>
+    <ul>
+      <li>
+        git status <span> //Ver los cambios</span>
+      </li>
+      <li>
+        git add nombrearchivo <span> //Añadir un archivo</span>
+      </li>
+      <li>
+        git add -A <span> //Añadir todos los archivos</span>
+      </li>
+      <li>
+        git commit -m "Añadirmos un commit" <span> //Añadir un commit despues de git add</span>
+      </li>
+    </ul>
+    <h3>Trabajar con commits</h3>
+    <ul>
+      <li>
+        git log <span> //Lista de todos los commits</span>
+      </li>
+      <li>
+        git checkout 06b104c67d211090c92f807d978ca6ab11b3a0ab <span> //Id del commit para volver al commit que queramos</span>
+      </li>
+      <li>
+        git checkout master <span> //Volver al ultimo commit</span>
+      </li>
+      <li>
+        git log > commit.txt <span> //Guardar los commits en un archivo de texto</span>
+      </li>
+      <li>
+        git reset --soft 06b104c67d211090c92f807d978ca6ab11b3a0ab <span> //Borra todos los commit sin borrar el codigo, hasta el commit introducido sin incluirlo</span>
+      </li>
+      <li>
+        git reset --hard 06b104c67d211090c92f807d978ca6ab11b3a0ab <span> //Borra todos los commit borrando el codigo, hasta el commit introducido sin incluirlo</span>
+      </li>
+    </ul>
+
+
   </body>
 </html>
