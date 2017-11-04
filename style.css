@@ -8,3 +8,16 @@ body {
 span {
   font-style: italic;
 }
+
+li:hover {
+	font-size:20px;
+}
+
+li {
+	font-size:15px;
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}
