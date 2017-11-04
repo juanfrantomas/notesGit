@@ -81,6 +81,9 @@
       <li>
         git branch NombreRama <span> //Borra la rama </span>
       </li>
+      <li>
+        git checkout -b RamaNueva <span>//Creamos una rama y a la vez nos movemos a ella </span>
+      </li>
     </ul>
     <h4>Fusiones</h4>
     <h6>Es la creación de un nuevo commit juntando una rama con otra</h6>
@@ -91,7 +94,24 @@
       <li>
         git merge Test <span> // Fusiona master <= Test </span>
       </li>
-
+    </ul>
+    <h4>GitHub o BitBucket</h4>
+    <ul>
+      <li>
+        git clone https://github.com/.../.../nombredelproyecto.git <span> //Simplemente nos descargaremos el proyecto, pero no vamos a colaborar en el </span>
+      </li>
+      <li>
+        git remote add origin https://github.com/juanfrantomas/notesGit.git <span> Vincular nuestro proyecto, con el proyecto remoto </span>
+      </li>
+      <li>
+        git remote -v <span> Comprobar el git remote que estamos conectados </span>
+      </li>
+      <li>
+        git remote remove origin <span> Borrar el repositorio </span>
+      </li>
+      <li>
+        git push origin master <span> Enviamos el repositorio local al repositorio de github </span>
+      </li>
     </ul>
   </body>
 </html>
