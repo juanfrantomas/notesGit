@@ -59,6 +59,8 @@
       <li>
         git reset --hard 06b104c67d211090c92f807d978ca6ab11b3a0ab <span> //Borra todos los commit borrando el codigo, hasta el commit introducido sin incluirlo</span>
       </li>
+      <li>
+        git commit --amend -m "Nuevo comentario" <span>//Cambia de nombre el ultimo comentario</span>
     </ul>
     <h3>Ramas y Fusiones</h3>
     <ul>
@@ -83,6 +85,9 @@
       </li>
       <li>
         git checkout -b RamaNueva <span>//Creamos una rama y a la vez nos movemos a ella </span>
+      </li>
+      <li>
+        git branch -a <span>//Ver ramas ocultas</span>
       </li>
     </ul>
     <h4>Fusiones</h4>
@@ -112,13 +117,43 @@
       <li>
         git push origin master <span> Enviamos el repositorio local al repositorio de github </span>
       </li>
+      <li>
+        git push origin master -f <span> Fuerza a subir el repositorio</span>
+      </li>
     </ul>
     <h4>Issue</h4>
     <h6>Forma de mejorar nuestro codigo, solucionar errores, como una forma de continuar</h6>
     <ul>
       <li>
+        Darle estilo a los Issue <a herf="https://guides.github.com/features/mastering-markdown/"> Mastering Markdown</a>
+      </li>
+    </ul>
+    <h4>Milestones</h4>
+    <h6>Son grupos de issues que aplican para un proyecto, característica o periodo de tiempo.</h6>
+    <h4>Tags anotadas</h4>
+    <h6>Las tags anotadas son almacenadas como objetos completos dentro de la base de Git y continen más información</h6>
+    <ul>
+      <li>
+        git tag -a v1.0 -m "Mensaje" numerocommit
       </li>
       <li>
+        git push origin v1.0 <span> //Subir solo los commit con ese tag</span>
+      </li>
+      <li>
+        git push origin --tags <span>//Subir todos los tags</span>
+      </li>
+    </ul>
+    <h4>Workflows</h4>
+    <h6>Flujos de trabajo: Proyectos propios, proyectos en equipo y proyectos con terceros</h6>
+    <ul>
+      <li>
+        git fetch origin <span>//Bajamos el repositorio remoto a origin/master(Que es el repositorio espejo) </span>
+      </li>
+      <li>
+        git merge origin/master <span> //Combinar el repositorio espejo con el local</span>
+      </li>
+      <li>
+        
       </li>
     </ul>
   </body>
