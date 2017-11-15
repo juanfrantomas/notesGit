@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Bienvenido al curso de git</h1>
+    <h1>GIT cheat sheet</h1>
     <h3>Iniciar con GIT</h3>
     <ul>
       <li>
@@ -153,6 +153,8 @@
         git merge origin/master <span> //Combinar el repositorio espejo con el local</span>
       </li>
       <li>
+      	git pull origin master<span> //fetch + merge</span>
+      <li>
         Fork:
         <ul>
           <li> Elegimos un Proyecto y pulsamos FORK </li>
@@ -164,7 +166,130 @@
           <li>Una vez lo tenemos subido, vamos github y vamos al repositorio nuestro y pulsamos en NEW PULL REQUEST de nuestro repositorio</li>
         </ul>
       </li>
-      </li>
-    </ul>
+  	</ul>
+	<h4>Github Page</h4>
+	<ul>
+		<li>
+			Para crear nuestra web personal simplemente creamos un repositorio juanfrantomas.github.io
+		</li>
+		<li>
+			Para crear la web de un proyecto creamos una rama que se llamo gh-pages
+		</li>
+	</ul>
+	<h4>Deployment</h4>
+	<h6>Local -> Github -> NuestroServer (Sin contraseña con SSH)</h6>
+	<ul>
+		<li>
+			Generamos una key ssh con: ssh-keygen
+		</li>
+		<li>
+			La copiamos en nuestro usuario de github
+		</li>
+		<li>
+			Nos vamos al servidor y copiamos la id_rsa.pub y la copiamos en github
+		</li>
+	</ul>
+	<h4>Git Hooks</h4>
+	<h6>Git-> script -> Ejecución</h6>
+	<h6>Local(git push...) -> Github -> Server (git pull...)</h6>
+	<ul>
+		<li>
+		Hay diferentes Hooks:
+		<ul>
+			<li>
+				pre-commit
+			</li>
+			<li>
+				post-commit
+			</li>
+			<li>
+				pre-rebase
+			</li>
+			<li>
+				post-checkout
+			</li>
+			<li>
+				post-merge
+			</li>
+			<li>
+				update
+			</li>
+			<li>
+				post-update
+			</li>
+			<li>
+				post-rewrite
+			</li>
+			<li>
+				pre-push
+			</li>
+		</ul>
+		</li>
+		<li>
+			Editamos o creamos el nombre del hook que queremos dentro de la carpeta .git/hooks
+		</li>
+		<li>
+			.git/hooks/post-commit
+			<div>
+				#!/bin/sh
+				git push origin Develop
+				ssh root@nuestroserver.com 'bash -s' < deployment.sh
+			</div>
+		</li>
+		<li>Damos permisos chmod -x post-commit
+		<li>
+			deployment.sh
+			<div>
+				#!/bin/sh<br/>
+				cd ../var/www/blog/<br/>
+				git pull origin master<br/>
+				sudo service apache2 restart<br/>
+			</div>
+		</li>
+		<li>
+			.gitignore  //example
+			<div>
+				# Compiled source #<br/>
+				###################<br/>
+				<br/>
+				*.com<br/>
+				*.class<br/>
+				*.dll<br/>
+				*.exe<br/>
+				*.o<br/>
+				*.so<br/>
+				*.sh<br/>
+				<br/>
+				# Packages #<br/>
+				############<br/>
+				<br/>
+				*.7z<br/>
+				*.dmg<br/>
+				*.gz<br/>
+				*.iso<br/>
+				*.jar<br/>
+				*.rar<br/>
+				*.tar<br/>
+				*.zip<br/>
+				<br/>
+				<br/>
+				# Logs and databases <br/>
+				#####################<br/>
+				<br/>
+				*.log<br/>
+				*.sql<br/>
+				*.sqlite<br/>
+				<br/>
+				# OS generated files #<br/>
+				######################<br/>
+				.DS_Store<br/>
+				.DS_Store?<br/>
+				._*<br/>
+				.Spotlight-V100<br/>
+				.Trashes<br/>
+				ehthumbs.db<br/>
+				Thumbs.db<br/>
+			</div>
+	</ul>
   </body>
 </html>
